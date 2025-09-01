@@ -111,5 +111,10 @@ app.delete('/api/addresses/:addressId', (req, res) => {
 });
 
 // Start server
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Backend running on http://localhost:${PORT}`));
+// const PORT = 5000;
+// app.listen(PORT, () => console.log(`Backend running on http://localhost:${PORT}`));
+// Start server (dynamic port for Render)
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Backend running on port ${PORT}`);
+});
